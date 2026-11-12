@@ -1,24 +1,23 @@
+
 name: My First GitHub Actions Workflow
 
 on: push
 
 jobs:
-  test: 
+  test:
     runs-on: ubuntu-latest
 
-   steps:
-     - name: Print a welcome message
-       run: echo "Hello koushal all the best."
+    steps:
+      - name: Print a welcome message
+        run: echo "Hello koushal all the best."
 
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-     - name: Checkout repository
-       uses: actions/checkout@v4
+      - name: Setup node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
 
-     - name: Setup node.js
-       uses: actions/setup-node@v4
-       with:
-         node-version: 22
-
-     - name: Execute javascript
-       run: node app.js
-       
+      - name: Execute javascript
+        run: node app.js
