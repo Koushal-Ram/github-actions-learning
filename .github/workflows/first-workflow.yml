@@ -20,4 +20,4 @@ jobs:
           node-version: 22
 
       - name: Execute javascript
-        run: node apps.js
+        run: node app.js
